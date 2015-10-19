@@ -20,31 +20,33 @@ namespace Lab2
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class FadeInFadeOut : Page
     {
-        public MainPage()
+        public FadeInFadeOut()
         {
             this.InitializeComponent();
         }
 
-        private void btnRight_Click(object sender, RoutedEventArgs e)
+        private void Ellipse_PointerEntered(object sender, PointerRoutedEventArgs e)
         {
-
+            FadeOut.Begin();
         }
 
-        private void btnDown_Click(object sender, RoutedEventArgs e)
+        private void Ellipse_PointerExited(object sender, PointerRoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(FadeInFadeOut));
+            FadeIn.Begin();
         }
 
-        private void btnLeft_Click(object sender, RoutedEventArgs e)
+        private void ver2_PointerEntered(object sender, PointerRoutedEventArgs e)
         {
-
+            Ver2_FadeIn.From = ver2.Opacity;
+            FadeInVer2.Begin();
         }
 
-        private void BtnDrag_Click(object sender, RoutedEventArgs e)
+        private void ver2_PointerExited(object sender, PointerRoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(DragAndDrop));
+            Ver2_FadeOut.From = ver2.Opacity;
+            FadeOutVer2.Begin();
         }
     }
 }

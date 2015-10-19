@@ -20,31 +20,18 @@ namespace Lab2
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class DragAndDrop : Page
     {
-        public MainPage()
+        public DragAndDrop()
         {
             this.InitializeComponent();
         }
 
-        private void btnRight_Click(object sender, RoutedEventArgs e)
+        private void Rectangle_ManipulationDelta(object sender, ManipulationDeltaRoutedEventArgs e)
         {
-
-        }
-
-        private void btnDown_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(FadeInFadeOut));
-        }
-
-        private void btnLeft_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnDrag_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(DragAndDrop));
+            var temp = (CompositeTransform)rect.RenderTransform;
+            temp.TranslateX += e.Delta.Translation.X;
+            temp.TranslateY += e.Delta.Translation.Y;
         }
     }
 }

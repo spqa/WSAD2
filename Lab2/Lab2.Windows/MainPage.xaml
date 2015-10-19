@@ -8,6 +8,26 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:Name="BtnDrag" HorizontalAlignment="Left" Margin="633,50,0,0" VerticalAlignment="Top" Click="BtnDrag_Click">
+            <Button.Content>
+                <SymbolIcon Symbol="Up"></SymbolIcon>
+            </Button.Content>
+        </Button>
+        <Button x:Name="btnLeft" HorizontalAlignment="Left" Margin="149,351,0,0" VerticalAlignment="Top" Click="btnLeft_Click">
+            <Button.Content>
+                <SymbolIcon Symbol="Back"></SymbolIcon>
+            </Button.Content>
+        </Button>
+        <Button x:Name="btnRight" HorizontalAlignment="Left" Margin="1126,329,0,0" VerticalAlignment="Top" Click="btnRight_Click">
+            <Button.Content>
+                <SymbolIcon Symbol="Forward"></SymbolIcon>
+            </Button.Content>
+        </Button>
+        <Button x:Name="btnDown" HorizontalAlignment="Left" Margin="633,564,0,0" VerticalAlignment="Top" Click="btnDown_Click">
+            <Button.Content>
+                <SymbolIcon Symbol="Download"></SymbolIcon>
+            </Button.Content>
+        </Button>
 
     </Grid>
 </Page>

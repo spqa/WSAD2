@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace Lab2
+namespace App2
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -25,26 +25,6 @@ namespace Lab2
         public MainPage()
         {
             this.InitializeComponent();
-        }
-
-        private void btnRight_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnDown_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(FadeInFadeOut));
-        }
-
-        private void btnLeft_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnDrag_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(DragAndDrop));
         }
     }
 }
