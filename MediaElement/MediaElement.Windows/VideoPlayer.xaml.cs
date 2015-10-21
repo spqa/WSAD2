@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage.Pickers;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -20,21 +21,32 @@ namespace MediaElement
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class VideoPlayer : Page
     {
-        public MainPage()
+        public VideoPlayer()
         {
             this.InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void find_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(Webcam));
+            FileOpenPicker open = new FileOpenPicker();
+            open.FileTypeFilter.Add(".mp4");
+            open.SuggestedStartLocation = PickerLocationId.VideosLibrary;
+            open.ViewMode = PickerViewMode.Thumbnail;
+            var file = await open.PickSingleFileAsync();
+            var Stream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read);
+            videoElement.SetSource(Stream,file.ContentType);
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void play_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(VideoPlayer));
+
+        }
+
+        private void _Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
